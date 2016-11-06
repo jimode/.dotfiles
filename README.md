@@ -7,7 +7,6 @@
 ```
 
 Notes
-```
+
 1. Check that you have [zsh installed](https://github.com/robbyrussell/oh-my-zsh), otherwise you may have to re-install.
-2. Make sure [Vundle](https://github.com/VundleVim/Vundle.vim) and run the PluginInstall in your .vimrc.
-```
+2. Make sure you have [Vundle](https://github.com/VundleVim/Vundle.vim) and run :PluginInstall in your .vimrc.

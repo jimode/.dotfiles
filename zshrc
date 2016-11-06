@@ -51,8 +51,8 @@ plugins=(git )
 
 export PATH=$HOME/bin:/usr/local/bin:/usr/local/bin/mysql/lib:$PATH
 
-export PATH=“/usr/local/bin/rbenv:${PATH}”
-eval "$(rbenv init -)"
+# export PATH=“/usr/local/bin/rbenv:${PATH}”
+# eval "$(rbenv init -)"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 export SAUCE_USERNAME=jimode

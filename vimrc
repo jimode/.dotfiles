@@ -7,6 +7,8 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'tpope/vim-bundler'
 Plugin 'tpope/vim-rake'
@@ -21,6 +23,7 @@ Plugin 'kana/vim-textobj-user'
 Plugin 'nelstrom/vim-textobj-rubyblock'
 Plugin 'jeffkreeftmeijer/vim-numbertoggle'
 Plugin 'mileszs/ack.vim'
+Plugin 'scrooloose/nerdtree'
 Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'christoomey/vim-tmux-runner'
@@ -173,7 +176,7 @@ function! <SID>SynStack()
 endfunc
 
 ".ru files in Ruby.
-au BufRead,BufNewFile *.ru seftiletype ruby
+au BufRead,BufNewFile *.ru setfiletype ruby
 
 "Previewheight for Fugitive's status window
 set previewheight=20

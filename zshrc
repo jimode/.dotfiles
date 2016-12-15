@@ -49,11 +49,11 @@ plugins=(git )
 
 # User configuration
 
+export PATH=$PATH:/usr/local/.dotfiles/bin
 export PATH=$HOME/bin:/usr/local/bin:/usr/local/bin/mysql/lib:$PATH
 
-# export PATH=“/usr/local/bin/rbenv:${PATH}”
-# eval "$(rbenv init -)"
-# export MANPATH="/usr/local/man:$MANPATH"
+export PATH=“/usr/local/bin/rbenv:${PATH}”
+eval "$(rbenv init -)" # export MANPATH="/usr/local/man:$MANPATH"
 
 export SAUCE_USERNAME=jimode
 export SAUCE_ACCESS_KEY=4a2031c2-e5d4-4509-bee5-04920d0e5dda
@@ -84,6 +84,8 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 alias zshconfig="vim ~/.zshrc"
 alias ohmyzsh="vim ~/.oh-my-zsh"
+alias zshtheme="vim ~/.oh-my-zsh/themes/doubleend.zsh-theme"
+
 alias reviews="cd ~/which/reviews-and-advice"
 alias reviews_smoke="cd ~/which/reviews-and-advice-smoke-tests"
 alias nodejs="cd ~/which/nodejs-server-side-renderer"
@@ -109,8 +111,10 @@ source ~/.bin/tmuxinator.zsh
 
 # Release notes rake job
 # GITHUB_ACCESS_TOKEN=c54a843521609da4cc0aa6ac240074f6c96f6f73 rake release:notes["v1.11.0","v1.12.0"]
-export GITHUB_ACCESS_TOKEN=03c7f527b114f94496983820f7141f26a66215ee
-#export GITHUB_ACCESS_TOKEN=c54a843521609da4cc0aa6ac240074f6c96f6f73
+#export GITHUB_ACCESS_TOKEN=eef6d684214e1dc2863a6035095778e887df8048
+export GITHUB_ACCESS_TOKEN=0f615676949712a741249bf82d99b7cf3eb71692
+#delete: export GITHUB_ACCESS_TOKEN=03c7f527b114f94496983820f7141f26a66215ee
+#delete: export GITHUB_ACCESS_TOKEN=c54a843521609da4cc0aa6ac240074f6c96f6f73
 ctags=/usr/local/bin/ctags
 
 export NVM_DIR="/Users/jodeyem/.nvm"

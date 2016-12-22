@@ -49,7 +49,6 @@ plugins=(git )
 
 # User configuration
 
-export PATH=$PATH:/usr/local/.dotfiles/bin
 export PATH=$HOME/bin:/usr/local/bin:/usr/local/bin/mysql/lib:$PATH
 
 export PATH=“/usr/local/bin/rbenv:${PATH}”
@@ -107,7 +106,7 @@ export PATH="/usr/local/heroku/bin:$PATH"
 
 # Tmuxinator
 export EDITOR='vim'
-source ~/.bin/tmuxinator.zsh
+source ~/.dotfiles/bin/tmuxinator.zsh
 
 # Release notes rake job
 # GITHUB_ACCESS_TOKEN=c54a843521609da4cc0aa6ac240074f6c96f6f73 rake release:notes["v1.11.0","v1.12.0"]

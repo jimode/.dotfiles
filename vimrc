@@ -28,6 +28,7 @@ Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'christoomey/vim-tmux-runner'
 Plugin 'thoughtbot/vim-rspec'
+Plugin 'bdauria/vim-rspec-cucumber'
 Plugin 'sickill/vim-monokai'
 Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
@@ -278,13 +279,26 @@ nnoremap <C-n> :call NumberToggle()<cr>
 
 "Mappings to trigger spec runs via Vim Tmux Runner.
 let g:rspec_command = "call VtrSendCommand('bundle exec rspec {spec}')"
-"let g:rspec_command = call VtrSendCommand('!bundle exec spec {spec}') add
-"double quotes as above
-map <Leader>ts :call RunCurrentSpecFile()<CR>
-map <Leader>s :call RunNearestSpec()<CR>
-map <Leader>l :call RunLastSpec()<CR>
-map <Leader>a :call RunAllSpecs()<CR>
+let g:cucumber_command = "call VtrSendCommand('bundle exec cucumber {test}')"
+
+"Mappings to trigger spec runs via Vim Dispatch"
+"let g:rspec_command = "Dispatch rspec {spec}"
+
+" vim-rspec mappings
+"map <Leader>ts :call RunCurrentSpecFile()<CR>
+"map <Leader>s :call RunNearestSpec()<CR>
+"map <Leader>l :call RunLastSpec()<CR>
+"map <Leader>a :call RunAllSpecs()<CR>
+"map <Leader>fr :VtrFocusRunner<CR>
+"map <Leader>tt :VtrAttachToPane
+
+" rspec-cucumber.vim mappings
+map <Leader>ts :call RunCurrentTestFile()<CR>
+map <Leader>s :call RunNearestTest()<CR>
+map <Leader>l :call RunLastTest()<CR>
+map <Leader>a :call RunAllTests()<CR>
 map <Leader>fr :VtrFocusRunner<CR>
+map <Leader>tt :VtrAttachToPane
 
 " Javascript configuration Variables
 let g:javascript_plugin_jsdoc = 1

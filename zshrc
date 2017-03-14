@@ -5,7 +5,8 @@ export ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="doubleend"
+#ZSH_THEME="doubleend"
+ZSH_THEME="cobalt2"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -51,13 +52,14 @@ plugins=(git )
 
 export PATH=$HOME/bin:/usr/local/bin:/usr/local/bin/mysql/lib:$PATH
 
-export PATH=“/usr/local/bin/rbenv:${PATH}”
-eval "$(rbenv init -)" # export MANPATH="/usr/local/man:$MANPATH"
-
 export SAUCE_USERNAME=jimode
 export SAUCE_ACCESS_KEY=4a2031c2-e5d4-4509-bee5-04920d0e5dda
 
 source $ZSH/oh-my-zsh.sh
+
+export PATH=“/usr/local/bin/rbenv:${PATH}”
+eval "$(rbenv init -)" # export MANPATH="/usr/local/man:$MANPATH"
+
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
@@ -109,16 +111,14 @@ export EDITOR='vim'
 source ~/.dotfiles/bin/tmuxinator.zsh
 
 # Release notes rake job
-# GITHUB_ACCESS_TOKEN=c54a843521609da4cc0aa6ac240074f6c96f6f73 rake release:notes["v1.11.0","v1.12.0"]
-#export GITHUB_ACCESS_TOKEN=eef6d684214e1dc2863a6035095778e887df8048
-export GITHUB_ACCESS_TOKEN=bd21a433046a7f2c4e7a9b730361d9d8d2a37c35
-#export GITHUB_ACCESS_TOKEN=0f615676949712a741249bf82d99b7cf3eb71692
-#delete: export GITHUB_ACCESS_TOKEN=03c7f527b114f94496983820f7141f26a66215ee
-#delete: export GITHUB_ACCESS_TOKEN=c54a843521609da4cc0aa6ac240074f6c96f6f73
+export GITHUB_ACCESS_TOKEN=74c55a6fef7f37ccb8418040ec906d4448f50a90
 ctags=/usr/local/bin/ctags
 
-export NVM_DIR="/Users/jodeyem/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+#export NVM_DIR="/Users/jodeyem/.nvm"
+#[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
+ export NVM_DIR="$HOME/.nvm"
+   . "/usr/local/opt/nvm/nvm.sh"
 
 # Tmux stuff
 _not_inside_tmux() { [[ -z "$TMUX" ]] }

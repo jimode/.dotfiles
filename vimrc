@@ -16,8 +16,11 @@ Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-dispatch'
-Plugin 'tpope/rbenv-ctags'
 Plugin 'tpope/vim-surround'
+Plugin 'tpope/rbenv-ctags'
+Plugin 'majutsushi/tagbar'
+Plugin 'xolox/vim-easytags'
+Plugin 'xolox/vim-misc'
 Plugin 'whatyouhide/vim-gotham'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'kana/vim-textobj-user'
@@ -26,13 +29,25 @@ Plugin 'jeffkreeftmeijer/vim-numbertoggle'
 Plugin 'mileszs/ack.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'jistr/vim-nerdtree-tabs'
+Plugin 'Yggdroot/indentLine'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'christoomey/vim-tmux-runner'
 Plugin 'thoughtbot/vim-rspec'
 Plugin 'bdauria/vim-rspec-cucumber'
 Plugin 'sickill/vim-monokai'
+Plugin 'mattn/emmet-vim'
+Plugin 'othree/html5-syntax.vim'
+Plugin 'othree/html5.vim'
 Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
+Plugin 'moll/vim-node'
+Plugin 'othree/javascript-libraries-syntax.vim'
+Plugin 'ternjs/tern_for_vim'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'vim-syntastic/syntastic'
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'tomtom/tlib_vim'
+Plugin 'garbas/vim-snipmate'
 
 call vundle#end()
 filetype plugin indent on
@@ -88,6 +103,8 @@ inoremap jk <esc>
 
 nnoremap <C-s> :w<CR>
 nnoremap <leader>ev :vs $MYVIMRC<CR>
+nnoremap <leader>vr :sp $MYVIMRC<CR>
+nnoremap <leader>vi :tabe $MYVIMRC<CR>
 nnoremap <leader>gs :Gstatus<CR><C-W>15+
 nnoremap <leader>m :NERDTreeToggle<CR>
 nnoremap <leader>rs :!clear;rspec --color spec<CR>
@@ -99,8 +116,12 @@ nnoremap <leader><space> :noh<CR>
 nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
 nnoremap / /\v
 nnoremap ? ?\v
-nnoremap <leader>t :NERDTreeFind<CR>
+nnoremap <leader>ff :NERDTreeFind<CR>
 nnoremap <leader>irb :VtrOpenRunner {'orientation': 'h', 'percentage': 50, 'cmd': 'irb'}<cr>
+" Vim + Ctags + Ctrlp
+nnoremap <leader>. :CtrlPTag<cr>
+" Vim + Ctags + Tagbar
+nnoremap <silent> <Leader>b :TagbarToggle<CR>
 
 vnoremap / /\v
 vnoremap ? ?\v
@@ -169,13 +190,13 @@ highlight SpellBad     ctermbg=0   ctermfg=1
 " set cc=80
 
 "Show syntax highlighting groups for word under cursor
-nmap <C-S-P> :call <SID>SynStack()>CR>
-function! <SID>SynStack()
-  if !exists("*syntack")
-    return
-  endif
-  echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
-endfunc
+"nmap <C-S-P> :call <SID>SynStack()>CR>
+"function! <SID>SynStack()
+"  if !exists("*syntack")
+"    return
+"  endif
+"  echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
+"endfunc
 
 ".ru files in Ruby.
 au BufRead,BufNewFile *.ru setfiletype ruby
@@ -306,11 +327,26 @@ let g:javascript_plugin_jsdoc = 1
 let g:javascript_plugin_ngdoc = 1
 let g:javascript_plugin_flow = 1
 
+" Enable tern keyboard shortcuts
+let g:tern_map_keys=1
+"show argument hints
+let g:tern_show_argument_hints='on_hold'
 
+" Enable JSX Syntax Highlighing in javascript files
+let g:jsx_ext_required = 0 
 
+" Syntastic
+" map a key to turning off syntastic: :SyntasticReset
+map <Leader>sr :SyntasticReset<CR>
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
 
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 
-
-
-
+"to prevent clash with youcompleteme, change snippet trigger
+"imap <C-J> <esc>a<Plug>snipMateNextOrTrigger
+"smap <C-J> <Plug>snipMateNextOrTrigger
 
